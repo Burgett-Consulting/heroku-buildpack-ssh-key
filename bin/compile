@@ -24,13 +24,21 @@ if [[ -z $BUILDPACK_SSH_KEY ]]; then
 fi
 
 mkdir -p ~/.ssh
+mkdir -p $PWD/.ssh
 chmod 700 ~/.ssh
+chmod 700 $PWD/.ssh
 
 # ignore/hide ssh warnings
 echo "Host *" >> ~/.ssh/config
 echo "   StrictHostKeyChecking no" >> ~/.ssh/config
 echo "   UserKnownHostsFile /dev/null" >> ~/.ssh/config
 echo "   LogLevel ERROR" >> ~/.ssh/config
+
+echo "Host *" >> $PWD/.ssh/config
+echo "   StrictHostKeyChecking no" >> $PWD/.ssh/config
+echo "   UserKnownHostsFile /dev/null" >> $PWD/.ssh/config
+echo "   LogLevel ERROR" >> $PWD/.ssh/config
+
 echo "-----> Installed SSH key from BUILDPACK_SSH_KEY"
 
 # install the ssh key
@@ -38,3 +46,11 @@ ssh-keyscan -H github.com >> ~/.ssh/known_hosts 2> /dev/null
 cat "$ENV_DIR/BUILDPACK_SSH_KEY" > ~/.ssh/id_rsa
 echo >> ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
+
+ssh-keyscan -H github.com >> $PWD/.ssh/known_hosts 2> /dev/null
+cat "$ENV_DIR/BUILDPACK_SSH_KEY" > $PWD/.ssh/id_rsa
+echo >> $PWD/.ssh/id_rsa
+chmod 600 $PWD/.ssh/id_rsa
+
+echo "Installed SSH key to $PWD/.ssh/:"
+echo ls -la $PWD/.ssh/
