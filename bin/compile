@@ -11,6 +11,9 @@ echo "-----> Install heroku-buildpack-ssh-key"
 BUILD_DIR=$1
 VENDOR_DIR="$BUILD_DIR/vendor"
 ENV_DIR=$3
+echo "Build dir: $1"
+echo "Cache dir: $2"
+echo "Env dir: $3"
 
 # adapted from SectorLabs/heroku-buildpack-git-submodule
 BUILDPACK_SSH_KEY=$(<"$ENV_DIR/BUILDPACK_SSH_KEY")
