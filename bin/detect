@@ -1,4 +1,5 @@
 #!/bin/bash
 
 echo "heroku-buildpack-ssh-key"
+echo 
 exit 0

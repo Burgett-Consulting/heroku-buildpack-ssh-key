@@ -6,7 +6,7 @@ indent() {
   sed -u 's/^/       /'
 }
 
-echo "-----> Install heroku-buildpack-ssh-key"
+echo "Installing heroku-buildpack-ssh-key" | indent
 
 BUILD_DIR=$1
 VENDOR_DIR="$BUILD_DIR/vendor"
@@ -35,4 +35,4 @@ cat "$ENV_DIR/BUILDPACK_SSH_KEY" > ~/.ssh/id_rsa
 echo >> ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 
-echo "Installed SSH key to ~/.ssh/" | indent
+echo "SSH key stored at ~/.ssh/id_rsa" | indent
