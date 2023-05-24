@@ -35,5 +35,4 @@ cat "$ENV_DIR/BUILDPACK_SSH_KEY" > ~/.ssh/id_rsa
 echo >> ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 
-echo "Installed SSH key to ~/.ssh/"
-echo "-----> Installed SSH key from BUILDPACK_SSH_KEY"
+echo "Installed SSH key to ~/.ssh/" | indent
