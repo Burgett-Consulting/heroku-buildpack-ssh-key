@@ -1,4 +1,4 @@
-Fork of https://github.com/heroku/heroku-buildpack-ssh-key. Used for SalStockPicker new for Heroku to be able to clone the stock-picker-data repo.
+Fork of https://github.com/heroku/heroku-buildpack-ssh-key. Used for [SalStockPickerNew](https://github.com/Burgett-Consulting/SalStockPickerNew/) for Heroku to be able to clone the [stock-picker-data](https://github.com/Burgett-Consulting/stock-picker-data) repo.
 
 heroku-buildpack-ssh-key
 ====
